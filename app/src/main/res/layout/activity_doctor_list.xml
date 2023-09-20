@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+<!--    &lt;!&ndash; 医生1的容器 &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        &lt;!&ndash; 医生1的图片 &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/doctorImageOne"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:src="@drawable/profile" />-->
+
+<!--        &lt;!&ndash; 医生1的信息（名字和简介） &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/doctorContainerOne"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            &lt;!&ndash; 医生1的名字 &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/doctorNameOne"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="医生1的姓名" />-->
+
+<!--            &lt;!&ndash; 医生1的简介 &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/doctorBioOne"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="医生1的简介" />-->
+
+<!--            &lt;!&ndash; 医生1的简介 &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/doctorReviewOne"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="医生1的简介" />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; 医生2的容器（与医生1相同的布局） &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        &lt;!&ndash; 医生2的图片 &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:id="@+id/doctorImageTwo"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:src="@drawable/profile" />-->
+
+<!--        &lt;!&ndash; 医生2的信息（名字和简介） &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            &lt;!&ndash; 医生2的名字 &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/doctorNameTwo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="医生2的姓名" />-->
+
+<!--            &lt;!&ndash; 医生2的简介 &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/doctorBioTwo"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="医生2的简介" />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+    <!-- 可以继续添加更多医生的容器，按照相同的模式 -->
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="371dp"
+        android:layout_height="692dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--            android:background="@drawable/frame">-->
+
+        <ListView
+            android:id="@+id/DiseaselistView"
+            android:layout_width="371dp"
+            android:layout_height="681dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+    <!-- 下一页按钮，位于屏幕下方的中间 -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

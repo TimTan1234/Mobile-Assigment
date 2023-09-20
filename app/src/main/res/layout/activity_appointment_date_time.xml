@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 上半部分：日历 -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <!-- 下半部分：时间选择按钮-->
+
+    <GridLayout
+        android:id="@+id/timeGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarView"
+        android:layout_gravity="center"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:columnCount="3"
+        android:paddingLeft="36dp"
+        android:rowCount="4"
+        android:textAlignment="center">
+
+
+        <!-- 示例：时间按钮 -->
+        <Button
+            android:id="@+id/timeButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="9:00 AM"/>
+
+        <!-- 在GridLayout中添加其他按钮，依次显示时间 -->
+        <Button
+            android:id="@+id/timeButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="9:30 AM"/>
+
+
+        <Button
+            android:id="@+id/timeButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="10:00 AM"/>
+
+
+        <Button
+            android:id="@+id/timeButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="10:30 AM"/>
+
+
+        <Button
+            android:id="@+id/timeButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="11:00 AM"/>
+
+
+        <Button
+            android:id="@+id/timeButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="11:30 AM"/>
+
+
+        <Button
+            android:id="@+id/timeButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="15:00 PM"/>
+
+
+        <Button
+            android:id="@+id/timeButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="15:30 PM"/>
+
+
+        <Button
+            android:id="@+id/timeButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="16:00 PM"/>
+
+        <Button
+            android:id="@+id/timeButton10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="16:30 PM"/>
+
+
+        <Button
+            android:id="@+id/timeButton11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="17:00 PM"/>
+
+
+        <Button
+            android:id="@+id/timeButton12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowSpan="1"
+            android:layout_columnSpan="1"
+            android:layout_margin="4dp"
+            android:backgroundTint="@color/timebutton"
+            android:text="17:30 PM"/>
+
+    </GridLayout>
+
+    <!-- 下一页按钮，位于屏幕下方的中间 -->
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/timebutton"
+        android:text="Next" />
+</RelativeLayout>
