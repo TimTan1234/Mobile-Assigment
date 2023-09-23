@@ -10,20 +10,27 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 
-class AppointmentReviewSummary : AppCompatActivity() {
+class AppointmentReviewSummary : BaseNavigationActivity() {
     private lateinit var appointmentDateTextView: TextView
     private lateinit var appointmentTimeTextView: TextView
     private lateinit var packageTextView: TextView
     private lateinit var durationTextView: TextView
     private lateinit var totalTextView: TextView
-    private lateinit var doctorNameTextView: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_appointment_review_summary)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        println("hi")
+        supportActionBar?.title = "Appointment Review Summary"
+        initToolbarAndNavigation()
 
         // Initialize TextViews
         appointmentDateTextView = findViewById(R.id.date)
@@ -46,7 +53,6 @@ class AppointmentReviewSummary : AppCompatActivity() {
         val doctorBio = sharedPreferences2.getString("doctorBio", "")
         val doctorProfile = sharedPreferences2.getString("doctorProfile", "")
 
-
         // 在适当的TextView显示信息
         val doctorNameTextView = findViewById<TextView>(R.id.doctorName)
         val doctorInfoTextView = findViewById<TextView>(R.id.doctorBio)
@@ -60,8 +66,6 @@ class AppointmentReviewSummary : AppCompatActivity() {
         val totalTextView = findViewById<TextView>(R.id.total)
         val paymentTextView = findViewById<TextView>(R.id.payment)
         val paymentImageView = findViewById<ImageView>(R.id.paymentImageView)
-
-
 
         doctorNameTextView.text = doctorName
         doctorInfoTextView.text = doctorBio
@@ -173,7 +177,7 @@ class AppointmentReviewSummary : AppCompatActivity() {
         // 获取Firebase Firestore实例
         val db = FirebaseFirestore.getInstance()
 
-// 创建一个包含预约信息的Map
+        // 创建一个包含预约信息的Map
         val appointmentInfo = hashMapOf(
             "name" to name,
             "age" to age,
@@ -189,8 +193,9 @@ class AppointmentReviewSummary : AppCompatActivity() {
             "doctorBio" to doctorBio
         )
 
-// 将信息上传到Firebase，Firebase将自动生成唯一的文档ID
+        // 将信息上传到Firebase，Firebase将自动生成唯一的文档ID
         db.collection("appointment")
+
             .add(appointmentInfo) // 使用add()方法，Firebase会自动生成唯一的文档ID
             .addOnSuccessListener { documentReference ->
                 // 上传成功的处理

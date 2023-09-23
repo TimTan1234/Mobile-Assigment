@@ -188,14 +188,14 @@
 
         <!-- 下一页按钮，位于屏幕下方的中间 -->
         <Button
-            android:id="@+id/buttonNext"
+            android:id="@+id/buttonConfirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/timebutton"
-            android:text="Next" />
+            android:text="Confirm" />
     </RelativeLayout>
 
     <!--    menu tool bar-->
@@ -208,5 +208,4 @@
         app:menu="@menu/activity_main_drawer"
         tools:visibility="gone" />
     <!--    menu tool bar-->
-</androidx.drawerlayout.widget.DrawerLayout>
-    <!--    menu tool bar-->
+</androidx.drawerlayout.widget.DrawerLayout><!--    menu tool bar-->

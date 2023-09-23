@@ -21,11 +21,11 @@ class Adapter (private val context: Context, private val dataSource: List<Model.
 
     @SuppressLint("MissingInflatedId")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val rowView = convertView ?: inflater.inflate(R.layout.activity_doctor_lis_1, parent, false)
+        val rowView = convertView ?: inflater.inflate(R.layout.activity_doctor_list_item, parent, false)
 
-        val doctorNameTextView = rowView.findViewById<TextView>(R.id.pharmacyName)
-        val doctorBioTextView = rowView.findViewById<TextView>(R.id.pharmacyTag)
-        val doctorPicImageView = rowView.findViewById<ImageView>(R.id.pharmacyLogo)
+        val doctorNameTextView = rowView.findViewById<TextView>(R.id.doctorname)
+        val doctorBioTextView = rowView.findViewById<TextView>(R.id.doctorbio)
+        val doctorPicImageView = rowView.findViewById<ImageView>(R.id.doctorProfile)
         val listItem = getItem(position) as Model.ListItem
 
         doctorNameTextView.text = listItem.doctorName

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- button_custom_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@android:color/darker_gray" />
+    <corners android:radius="20dp" /> <!-- 控制圆角半径，使按钮形状更接近橢圆 -->
+</shape>

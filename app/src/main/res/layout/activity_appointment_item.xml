@@ -1,67 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- appointment_item.xml -->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:orientation="horizontal"
     android:padding="16dp">
 
+    <!-- 醫生的图片 -->
+    <ImageView
+        android:id="@+id/doctorImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/profile" />
 
+    <!-- 垂直布局，包含 doctorName、appointmentDate、appointmentTime -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="15dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-
-
-        <!-- ImageView，用于醫生的图片 -->
-        <ImageView
-            android:id="@+id/doctorImageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/profile" />
-
-        <!-- 垂直布局，包含 doctorName、appointmentDate 和 appointmentTime -->
-        <LinearLayout
-            android:layout_width="0dp"
+        <!-- 醫生名字 -->
+        <TextView
+            android:id="@+id/doctorNameTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="15dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:text="Doctor Name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <!-- 醫生名字 -->
-            <TextView
-                android:id="@+id/doctorNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doctor Name"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <!-- appointment的日期 -->
+        <TextView
+            android:id="@+id/appointmentDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textSize="16sp" />
 
-            <!-- appointment的日期 -->
-            <TextView
-                android:id="@+id/appointmentDateTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date"
-                android:textSize="16sp" />
-
-            <!-- appointment的时间 -->
-            <TextView
-                android:id="@+id/appointmentTimeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-
+        <!-- appointment的时间 -->
+        <TextView
+            android:id="@+id/appointmentTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textSize="16sp" />
     </LinearLayout>
 
+    <!-- Reschedule 和 Cancel 按钮 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!-- Reschedule 按钮 -->
+        <Button
+            android:id="@+id/rescheduleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1CB7FF"
+            android:text="Reschedule"
+            android:textColor="#FCFEFF" />
+
+        <!-- Cancel 按钮 -->
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F6F3F3"
+            android:text="Cancel"
+            android:textColor="#00A5FF" />
+    </LinearLayout>
 </LinearLayout>

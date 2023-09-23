@@ -14,7 +14,8 @@ class Appointment(
     val selectedDuration: String,
     val selectedPackage: String,
     val total: String,
-    val doctorBio: String
+    val doctorBio: String,
+    val appID:String
 
 ) {
    // 可以添加其他属性和方法，以表示更多的预约信息

@@ -8,12 +8,18 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
 
-class DoctorDetailsActivity : AppCompatActivity() {
+class DoctorDetailsActivity : BaseNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctor_details)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        println("hi")
+        supportActionBar?.title = "Doctor Details"
+        initToolbarAndNavigation()
 
         // 获取信息从SharedPreferences
         val sharedPreferences = getSharedPreferences("DoctorPrefs", Context.MODE_PRIVATE)

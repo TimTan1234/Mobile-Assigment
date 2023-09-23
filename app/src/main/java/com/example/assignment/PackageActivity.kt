@@ -9,15 +9,20 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Spinner
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
-class PackageActivity : AppCompatActivity() {
+class PackageActivity : BaseNavigationActivity() {
     private lateinit var selectedDuration: String
     private lateinit var selectedPackage: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_package)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        println("hi")
+        supportActionBar?.title = "Appointment Package"
+        initToolbarAndNavigation()
 
         // 获取 Spinner
         val durationSpinner = findViewById<Spinner>(R.id.durationSpinner)
@@ -55,7 +60,7 @@ class PackageActivity : AppCompatActivity() {
         // 获取 RadioButton 引用
         val emailRadioButton = findViewById<RadioButton>(R.id.emailRadioButton)
         val callRadioButton = findViewById<RadioButton>(R.id.callRadioButton)
-        val videoRadioButton = findViewById<RadioButton>(R.id.videoRadioButton)
+        val videoCallRadioButton = findViewById<RadioButton>(R.id.videoCallRadioButton)
 
 
         // 设置默认选中的包裹方式为 "Email"
@@ -66,21 +71,21 @@ class PackageActivity : AppCompatActivity() {
         emailRadioButton.setOnClickListener {
             emailRadioButton.isChecked = true
             callRadioButton.isChecked = false
-            videoRadioButton.isChecked = false
+            videoCallRadioButton.isChecked = false
             selectedPackage = "Email"
         }
 
         callRadioButton.setOnClickListener {
             emailRadioButton.isChecked = false
             callRadioButton.isChecked = true
-            videoRadioButton.isChecked = false
+            videoCallRadioButton.isChecked = false
             selectedPackage = "Call"
         }
 
-        videoRadioButton.setOnClickListener {
+        videoCallRadioButton.setOnClickListener {
             emailRadioButton.isChecked = false
             callRadioButton.isChecked = false
-            videoRadioButton.isChecked = true
+            videoCallRadioButton.isChecked = true
             selectedPackage = "Video Call"
         }
 

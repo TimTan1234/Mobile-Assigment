@@ -10,19 +10,23 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
-class DoctorListActivity : AppCompatActivity() {
+class DoctorListActivity : BaseNavigationActivity() {
     val db = FirebaseFirestore.getInstance()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_doctor_list) // 使用正确的布局文件名
 
-
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        println("hi")
+        supportActionBar?.title = "Doctor List"
+        initToolbarAndNavigation()
 
         list()
     }

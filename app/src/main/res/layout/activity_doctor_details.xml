@@ -1,49 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:openDrawer="start">
+    <!--    menu tool bar-->
 
-    <!-- 医生照片 -->
-    <ImageView
-        android:id="@+id/doctorImage"
+    <!--    menu tool bar-->
+    <!--    menu tool bar-->
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:src="@drawable/profile" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp">
 
-    <!-- 医生名字 -->
-    <TextView
-        android:id="@+id/doctorName"
+        <!-- 医生照片 -->
+
+        <ImageView
+            android:id="@+id/doctorImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/profile" />
+
+        <!-- 医生名字 -->
+        <TextView
+            android:id="@+id/doctorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctorImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="医生名字22"
+            android:textSize="18sp" />
+
+        <!-- 其他信息 -->
+        <TextView
+            android:id="@+id/doctorInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/doctorName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="其他信息"
+            android:textSize="16sp" />
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/appointmentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="Make Appointment" />
+
+
+    </RelativeLayout>
+    <!--    menu tool bar-->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/doctorImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="医生名字22"
-        android:textSize="18sp" />
-
-    <!-- 其他信息 -->
-    <TextView
-        android:id="@+id/doctorInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/doctorName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="其他信息"
-        android:textSize="16sp" />
-
-    <!-- Button -->
-    <Button
-        android:id="@+id/appointmentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="预约医生" />
-
-
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:visibility="visible"
+        app:menu="@menu/activity_main_drawer"
+        tools:visibility="gone" />
+    <!--    menu tool bar-->
+</androidx.drawerlayout.widget.DrawerLayout>
+    <!--    menu tool bar-->

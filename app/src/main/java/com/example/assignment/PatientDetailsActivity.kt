@@ -9,13 +9,20 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
-class PatientDetailsActivity : AppCompatActivity() {
+class PatientDetailsActivity : BaseNavigationActivity() {
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_patient_details)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        println("hi")
+        supportActionBar?.title = "Patient Details"
+        initToolbarAndNavigation()
 
         val genderSpinner = findViewById<Spinner>(R.id.genderSpinner)
         val editTextName = findViewById<EditText>(R.id.editTextName)

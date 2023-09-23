@@ -5,34 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:padding="15dp">
 
 
     <ImageView
-        android:id="@+id/pharmacyLogo"
-        android:layout_width="47dp"
-        android:layout_height="32dp"
+        android:id="@+id/doctorProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp" />
+        android:src="@drawable/profile" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginStart="15dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/pharmacyName"
+            android:id="@+id/doctorname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Big Pharmacy" />
+            android:text="Doctor Name"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/pharmacyTag"
+            android:id="@+id/doctorbio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Doctor Bio"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </LinearLayout>
